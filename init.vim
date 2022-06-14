@@ -48,7 +48,7 @@ call plug#end()
 " General II ------------------------
 
 "Color scheme
-colorscheme dracula
+colorscheme dracula "requires nvim version 0.5.X and higher
 
 "Opening NERDTree onStart
 autocmd StdinReadPre * let s:std_in=1
