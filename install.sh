@@ -70,6 +70,18 @@ sudo apt install nmap
 sudo apt install geany
 sudo apt install python3-pip
 
+# Installin neovim ----------------------------
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
+mv init.vim ~/.config/nvim/
+
+sh -c 'curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+echo alias nvim=\"vim\" | cat >> sample.txt 
+
+
 # Installing GitHub Desktop -------------------
 wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo apt-key add -
 
@@ -106,5 +118,3 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 nvm install 18.3.0
-
-echo "All done...goodbye"
