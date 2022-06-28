@@ -68,9 +68,20 @@ sudo apt install gimp
 sudo apt install mc 
 sudo apt install nmap 
 sudo apt install geany
+sudo apt install python3
 sudo apt install python3-pip
 
-# Installin neovim ----------------------------
+# Installing ZSH
+sudo apt install zsh 
+
+sudo chsh -s /bin/zsh
+
+sh -C "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+sudo mv .zshrc ~/
+
+
+# Installing neovim ----------------------------
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
@@ -81,6 +92,12 @@ sh -c 'curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 
 
 echo alias nvim=\"vim\" | cat >> .bashrc
+
+echo alias nvim=\"vim\" | cat >> .zshrc
+
+echo alias python=\"python3\" | cat >> .zshrc
+
+echo alias python=\"python3\" | cat >> .bashrc
 
 
 # Installing GitHub Desktop -------------------
@@ -119,13 +136,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 nvm install 18.3.0
-
-
-# Install ZSH ---------------------
-sudo apt install zsh 
-
-sudo chsh -s /bin/zsh 
-
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
