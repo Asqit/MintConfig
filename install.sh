@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Theme --------------------------------------
 cd ~/Downloads
 
@@ -16,12 +15,12 @@ cd ..
 cd icons
 
 tar -xf Colloid-purple.tar.xz
-tar -xf WhiteSur-cursors.tar.xz
+tar -xf El_Capitan_CursorsMODNew.tar.gz
 
 mkdir ~/.icons
 
 mv Colloid-purple/* ~/.icons
-mv WhiteSur-cursors ~/.icons
+mv El_Capitan_CursorsMODNew ~/.icons
 
 # Gnome terminal (dracula theme) -------------
 cd ~/
@@ -49,8 +48,6 @@ mv dracula.soc ~/.config/libreoffice/*/user/config
 cd ..
 rm -rf libreoffice
 
-
-
 # Update & upgrade ----------------------------
 sudo apt-get update 
 sudo apt-get upgrade
@@ -70,8 +67,9 @@ sudo apt install nmap
 sudo apt install geany
 sudo apt install python3
 sudo apt install python3-pip
+sudo apt install neofetch
 
-# Installing ZSH
+# Installing ZSH ------------------------------
 sudo apt install zsh 
 
 sudo chsh -s /bin/zsh
@@ -79,7 +77,6 @@ sudo chsh -s /bin/zsh
 sh -C "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 sudo mv .zshrc ~/
-
 
 # Installing neovim ----------------------------
 sudo add-apt-repository ppa:neovim-ppa/stable
@@ -138,3 +135,23 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 nvm install 18.3.0
 
 
+sudo npm i -g npm
+
+
+# Closing and creating report
+
+touch report.txt
+
+echo node --version | cat > report.txt
+echo npm --version | cat >> report.txt
+echo nvim --version | cat >> report.txt
+echo python --version | cat >> report.txt
+echo git --version | cat >> report.txt
+echo vim --version | cat >> report.txt
+echo pip --version | cat >> report.txt
+
+
+code ./report.txt
+
+
+neofetch
