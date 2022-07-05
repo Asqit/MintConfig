@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 # Theme --------------------------------------
 cd ~/Downloads
 
@@ -22,23 +22,6 @@ mkdir ~/.icons
 mv Colloid-purple/* ~/.icons
 mv El_Capitan_CursorsMODNew ~/.icons
 
-# Gnome terminal (dracula theme) -------------
-cd ~/
-sudo apt-get install dconf-cli
-git clone https://github.com/dracula/gnome-terminal
-cd gnome-terminal
-chmod +x install.sh
-./install.sh
-cd .. 
-rm -rf gnome-terminal
-
-# Plank theme --------------------------------
-cd ~/
-git clone https://github.com/dracula/plank.git
-cd plank
-mv Dracula ~/.local/share/plank/themes
-cd ..
-rm -rf plank
 
 # LibreOffice --------------------------------
 cd ~/
@@ -69,14 +52,14 @@ sudo apt install python3
 sudo apt install python3-pip
 sudo apt install neofetch
 
-# Installing ZSH ------------------------------
-sudo apt install zsh 
+# Plank theme --------------------------------
+cd ~/
+git clone https://github.com/dracula/plank.git
+cd plank
+mv Dracula ~/.local/share/plank/themes
+cd ..
+rm -rf plank
 
-sudo chsh -s /bin/zsh
-
-sh -C "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-sudo mv .zshrc ~/
 
 # Installing neovim ----------------------------
 sudo add-apt-repository ppa:neovim-ppa/stable
@@ -140,15 +123,15 @@ sudo npm i -g npm
 
 # Closing and creating report
 
-touch report.txt
+sudo touch report.txt
 
-echo node --version | cat > report.txt
-echo npm --version | cat >> report.txt
-echo nvim --version | cat >> report.txt
-echo python --version | cat >> report.txt
-echo git --version | cat >> report.txt
-echo vim --version | cat >> report.txt
-echo pip --version | cat >> report.txt
+sudo echo node --version | cat > report.txt
+sudo echo npm --version | cat >> report.txt
+sudo echo nvim --version | cat >> report.txt
+sudo echo python --version | cat >> report.txt
+sudo echo git --version | cat >> report.txt
+sudo echo vim --version | cat >> report.txt
+sudo echo pip --version | cat >> report.txt
 
 
 code ./report.txt
