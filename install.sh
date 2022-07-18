@@ -22,15 +22,6 @@ mkdir ~/.icons
 mv Colloid-purple/* ~/.icons
 mv El_Capitan_CursorsMODNew ~/.icons
 
-
-# LibreOffice --------------------------------
-cd ~/
-git clone https://github.com/dracula/libreoffice.git
-cd libreoffice/
-mv dracula.soc ~/.config/libreoffice/*/user/config
-cd ..
-rm -rf libreoffice
-
 # Update & upgrade ----------------------------
 sudo apt-get update 
 sudo apt-get upgrade
@@ -38,7 +29,7 @@ sudo apt-get upgrade
 # Installing software -------------------------
 sudo apt install vim
 sudo apt install vlc 
-sudi apt install plank 
+sudo apt install plank 
 sudo apt instal tlp
 sudo apt install tlpui
 sudo apt install git 
@@ -56,9 +47,25 @@ sudo apt install neofetch
 cd ~/
 git clone https://github.com/dracula/plank.git
 cd plank
-mv Dracula ~/.local/share/plank/themes
+DIRECTORY=~/.local/share/plank/themes
+
+if [ ! -d "$DIRECTORY" ]; then
+  mv Dracula ~/.local/share/plank/themes
+else 
+  mkdir $DIRECTORY
+  mv Dracula $DIRECTORY
+fi
+
 cd ..
 rm -rf plank
+
+# LibreOffice --------------------------------
+cd ~/
+git clone https://github.com/dracula/libreoffice.git
+cd libreoffice/
+mv dracula.soc ~/.config/libreoffice/*/user/config
+cd ..
+rm -rf libreoffice
 
 
 # Installing neovim ----------------------------
