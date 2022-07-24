@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Installing ZSH ------------------------------
+
 sudo apt install zsh 
 
 sudo chsh -s /bin/zsh

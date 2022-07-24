@@ -1,61 +1,35 @@
 #!/usr/bin/zsh
-# Theme --------------------------------------
-cd ~/Downloads
 
-tar -xf Mint-Darcula.tar.gz
-
-cd Mint-Darcula
-
-cd theme 
-
-mv darcula ~/.themes
-
-cd ..
-
-cd icons
-
-tar -xf Colloid-purple.tar.xz
-tar -xf El_Capitan_CursorsMODNew.tar.gz
-
-mkdir ~/.icons
-
-mv Colloid-purple/* ~/.icons
-mv El_Capitan_CursorsMODNew ~/.icons
 
 # Update & upgrade ----------------------------
 sudo apt-get update 
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 
 # Installing software -------------------------
-sudo apt install vim
-sudo apt install vlc 
-sudo apt install plank 
-sudo apt instal tlp
-sudo apt install tlpui
-sudo apt install git 
-sudo apt install g++
-sudo apt install steam 
-sudo apt install gimp 
-sudo apt install mc 
-sudo apt install nmap 
-sudo apt install geany
-sudo apt install python3
-sudo apt install python3-pip
-sudo apt install neofetch
-sudo apt install spotify
+sudo apt install -y vim
+sudo apt install -y vlc 
+sudo apt install -y plank 
+sudo apt install -y tlp
+sudo apt install -y tlpui
+sudo apt install -y git 
+sudo apt install -y g++
+sudo apt install -y steam 
+sudo apt install -y gimp 
+sudo apt install -y mc 
+sudo apt install -y nmap 
+sudo apt install -y geany
+sudo apt install -y python3
+sudo apt install -y python3-pip
+sudo apt install -y neofetch
+sudo apt install -y spotify
 
 # Plank theme --------------------------------
 cd ~/
 git clone https://github.com/dracula/plank.git
 cd plank
-DIRECTORY=~/.local/share/plank/themes
 
-if [ ! -d "$DIRECTORY" ]; then
-  mv Dracula ~/.local/share/plank/themes
-else 
-  mkdir ~/.local/share/plank/themes
-  mv Dracula ~/.local/share/plank/themes
-fi
+mkdir ~/.local/share/plank/themes
+mv Dracula ~/.local/share/plank/themes
 
 cd ..
 rm -rf plank
@@ -96,7 +70,7 @@ sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/
 
 sudo apt-get update
 
-sudo apt install github-desktop
+sudo apt install -y github-desktop
 
 
 
@@ -115,7 +89,7 @@ sudo apt install apt-transport-https
 
 sudo apt update 
 
-sudo apt install code
+sudo apt install -y code
 
 
 # Install node version manager --------------
@@ -132,15 +106,4 @@ sudo npm i -g npm
 
 # Install bun (js enviroment) -------------
 curl https://bun.sh/install | bash
-
-# Closing and creating report
-sudo touch report.txt
-
-echo node --version | sudo  cat > report.txt
-sudo echo npm --version | sudo  cat >> report.txt
-sudo echo nvim --version | sudo  cat >> report.txt
-sudo echo python --version | sudo  cat >> report.txt
-sudo echo git --version | sudo  cat >> report.txt
-sudo echo vim --version | sudo  cat >> report.txt
-sudo echo pip --version | sudo  cat >> report.txt
 
