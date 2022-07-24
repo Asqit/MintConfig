@@ -42,6 +42,7 @@ sudo apt install geany
 sudo apt install python3
 sudo apt install python3-pip
 sudo apt install neofetch
+sudo apt install spotify
 
 # Plank theme --------------------------------
 cd ~/
@@ -52,8 +53,8 @@ DIRECTORY=~/.local/share/plank/themes
 if [ ! -d "$DIRECTORY" ]; then
   mv Dracula ~/.local/share/plank/themes
 else 
-  mkdir $DIRECTORY
-  mv Dracula $DIRECTORY
+  mkdir ~/.local/share/plank/themes
+  mv Dracula ~/.local/share/plank/themes
 fi
 
 cd ..
@@ -63,6 +64,7 @@ rm -rf plank
 cd ~/
 git clone https://github.com/dracula/libreoffice.git
 cd libreoffice/
+mkdir ~/.config/libreoffice/*/user/config
 mv dracula.soc ~/.config/libreoffice/*/user/config
 cd ..
 rm -rf libreoffice
@@ -128,20 +130,17 @@ nvm install 18.3.0
 sudo npm i -g npm
 
 
-# Closing and creating report
+# Install bun (js enviroment) -------------
+curl https://bun.sh/install | bash
 
+# Closing and creating report
 sudo touch report.txt
 
-sudo echo node --version | cat > report.txt
-sudo echo npm --version | cat >> report.txt
-sudo echo nvim --version | cat >> report.txt
-sudo echo python --version | cat >> report.txt
-sudo echo git --version | cat >> report.txt
-sudo echo vim --version | cat >> report.txt
-sudo echo pip --version | cat >> report.txt
+echo node --version | sudo  cat > report.txt
+sudo echo npm --version | sudo  cat >> report.txt
+sudo echo nvim --version | sudo  cat >> report.txt
+sudo echo python --version | sudo  cat >> report.txt
+sudo echo git --version | sudo  cat >> report.txt
+sudo echo vim --version | sudo  cat >> report.txt
+sudo echo pip --version | sudo  cat >> report.txt
 
-
-code ./report.txt
-
-
-neofetch
