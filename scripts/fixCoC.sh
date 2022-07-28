@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 
 cd ~/local/share/nvim/plugged/coc.nvim
 
